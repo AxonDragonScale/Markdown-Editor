@@ -1,0 +1,26 @@
+{
+  "name": "markdown-editor",
+  "version": "1.0.0",
+  "description": "A Markdown editor with live preview built with node.js",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AxonDragonScale/Markdown-Editor.git"
+  },
+  "keywords": [
+    "Markdown"
+  ],
+  "author": "Ronak Harkhani",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AxonDragonScale/Markdown-Editor/issues"
+  },
+  "homepage": "https://github.com/AxonDragonScale/Markdown-Editor#readme",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4"
+  }
+}

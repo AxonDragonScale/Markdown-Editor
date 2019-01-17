@@ -1,11 +1,28 @@
 <!DOCTYPE html>
 <html>
+
+    <!-- css files have to be linked in head, but javascript scripts have to be included as scripts in body -->
+
     <head>
         <title>Markdown-Editor</title>
+        <!-- include minimal version of bootstrap in the project -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <link href="style.css" rel="stylesheet"> 
     </head>
 
+    <!-- container-fluid is a full width container class in bootstrap -->
     <body class="container-fluid">
-        Hello World!
+        
+        <section class="row">
+            <!-- col-md-6 and full height are bootstrap classes -->
+            <textarea class="col-md-6 full-height" id="textArea">Write your text here...</textarea>
+            <div class="col-md-6 full-height" id="markdownArea"></div>
+            <!-- the textarea is where we will type markdown and div is where the markdown will be rendered -->
+        </section>
+
+        <!-- include minimal version of showdown script and own script -->
+        <script src="https://cdn.rawgit.com/showdownjs/showdown/1.9.0/dist/showdown.min.js"></script>
+        <script src="script.js"></script>
+
     </body>
 </html>

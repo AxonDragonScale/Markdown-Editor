@@ -1,0 +1,22 @@
+html, body, section, .full-height {
+    height: 100%;
+}
+
+#textArea {
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+
+    border: none;
+    outline: none;
+    resize: none;
+    overflow: auto;
+
+    /* these are all just box-shadow attributes for different vendors */
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+#markdownArea {
+    overflow: auto;
+    border-left: 2px solid black;
+}

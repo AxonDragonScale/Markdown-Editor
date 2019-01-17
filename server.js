@@ -25,7 +25,7 @@ app.get('/', function(req, res) {
 // here we render pad.ejs as our homepage.
 
 // listen on port 8000 of localhost
-var port = 8000;
+var port = process.env.PORT || 8000;
 app.listen(port);
 // listen() binds and listens for connections on the specified host and port
 

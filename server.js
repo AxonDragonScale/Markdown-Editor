@@ -24,6 +24,11 @@ app.get('/', function(req, res) {
 // res.render() renders a view and sends the rendered HTML string to the client
 // here we render pad.ejs as our homepage.
 
+// homepage/id url will also render page. 
+// so this gives support for multiple files
+app.get('/(:id)', function(req, res) {
+    res.render('pad');
+});
 
 // load sharejs and redis
 // sharejs is a library for collaborativ editing

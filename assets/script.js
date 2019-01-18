@@ -14,12 +14,16 @@ var initializeMarkdownEditor = function() {
 
     textArea.addEventListener('input', convertTextAreaToMarkdown);
 
-    // we open a sharejs connection to howe, and attach the textArea to the object returned
-    // This is for collaborative editing, your textArea will automatically change if someone else makes a change
-    sharejs.open('home', 'text', function(error, doc) {
-        doc.attach_textarea(textArea);
-        convertTextAreaToMarkdown();
-    });
+    // pathname won't be greater than 1 for homepage, so this will disable realtime collaboration on homepage
+    if(document.location.pathname > 1) {
+        var documentName = document.location.pathname.substring(1);     // pathname[1] to end
+        // we open a sharejs connection to the document, and attach the textArea to the object returned
+        // This is for collaborative editing, your textArea will automatically change if someone else makes a change
+        sharejs.open(documentName, 'text', function(error, doc) {
+            doc.attach_textarea(textArea);
+            convertTextAreaToMarkdown();
+        });
+    }
     
     // Checks if another user made a change to textArea
     var didChangeOccur = function() {
@@ -35,7 +39,7 @@ var initializeMarkdownEditor = function() {
         }
     }, 1000);
 
-
+    convertTextAreaToMarkdown();
 };
 
 // onload property is takes a function reference, the function is called when the load event is fired

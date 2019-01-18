@@ -21,6 +21,8 @@
   "homepage": "https://github.com/AxonDragonScale/Markdown-Editor#readme",
   "dependencies": {
     "ejs": "^2.6.1",
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "redis": "^2.8.0",
+    "share": "^0.6.3"
   }
 }

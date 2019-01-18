@@ -24,6 +24,20 @@ app.get('/', function(req, res) {
 // res.render() renders a view and sends the rendered HTML string to the client
 // here we render pad.ejs as our homepage.
 
+
+// load sharejs and redis
+// sharejs is a library for collaborativ editing
+var sharejs = require('share');     // sharejs is now sharedb. replace?
+require('redis');
+
+// get options for sharejs
+var options = {
+    db : {type : 'redis'}   // forcing sharejs to use redis data store
+};
+
+// attach express server to sharejs
+sharejs.server.attach(app, options);
+
 // listen on port 8000 of localhost
 var port = 8000;
 app.listen(port);
